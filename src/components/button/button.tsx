@@ -4,6 +4,6 @@ type ButtonProps = Readonly<{
   children: React.ReactNode;
 }>;
 
-export const Button: React.FC<ButtonProps> = ({ children }) => {
+export const Button = ({ children }: ButtonProps) => {
   return <button className={styles.button}>{children}</button>;
 };
