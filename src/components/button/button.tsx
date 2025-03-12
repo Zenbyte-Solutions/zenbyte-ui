@@ -1,9 +1,9 @@
 import styles from "./button.module.sass";
 
-export type ButtonProps = Readonly<{
+type ButtonProps = Readonly<{
   children: string;
 }>;
 
-export const Button: React.FC<ButtonProps> = ({ children }) => {
-  return <button className={styles.button}>{children}</button>;
+export const Button = (props: ButtonProps) => {
+  return <button className={styles.button}>{props.children}</button>;
 };
