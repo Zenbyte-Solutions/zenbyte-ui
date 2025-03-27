@@ -5,5 +5,10 @@ type ButtonProps = Readonly<{
 }>;
 
 export const Button = ({ children }: ButtonProps) => {
-  return <button className={styles.button}>{children}</button>;
+  return (
+    <>
+      <button className={styles.button}>{children}</button>
+      <p className="bg-amber-700 text-red-600">hallloooo</p>
+    </>
+  );
 };
