@@ -1,30 +1,83 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './button';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button, ButtonVariant, ButtonSize } from "./button";
+import { action } from "@storybook/addon-actions";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+// Storybook meta configuratie
 const meta = {
-  title: 'Components/Button',
+  title: "Components/Button",
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
+    variant: {
+      control: { type: "select" },
+      options: Object.values(ButtonVariant), // Gebruik de enum-waarden voor de variant
+    },
+    size: {
+      control: { type: "select" },
+      options: Object.values(ButtonSize), // Gebruik de enum-waarden voor de size
+    },
+    children: {
+      control: "text",  // Je kunt de button-tekst in Storybook aanpassen
+    },
+    onClick: {
+      action: "clicked",  // Zorgt ervoor dat de click actie zichtbaar is in Storybook
+    },
   },
-  args: { },
+  args: {
+    variant: ButtonVariant.Primary,  // Gebruik de ButtonVariant enum
+    size: ButtonSize.Default,        // Gebruik de ButtonSize enum
+    children: "Button",              // De tekst die in de knop komt
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: 'Primary Children',
+    variant: ButtonVariant.Primary,
+    size: ButtonSize.Large,
+    children: "Primary Button",
+    onClick: action("clicked"),
   },
 };
 
-export const Secondary: Story = {
+export const Info: Story = {
   args: {
-    children: 'Secondary Children',
+    variant: ButtonVariant.Info,
+    size: ButtonSize.Default,
+    children: "Info Button",
+    onClick: action("clicked"),
+  },
+};
+
+export const Success: Story = {
+  args: {
+    variant: ButtonVariant.Success,
+    size: ButtonSize.Small,
+    children: "Success Button",
+    onClick: action("clicked"),
+  },
+};
+
+export const Danger: Story = {
+  args: {
+    variant: ButtonVariant.Danger,
+    size: ButtonSize.Small,
+    children: "Danger Button",
+    onClick: action("clicked"),
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    variant: ButtonVariant.Warning,
+    size: ButtonSize.Large,
+    children: "Warning Button",
+    onClick: action("clicked"),
   },
 };
