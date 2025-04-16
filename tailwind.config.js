@@ -12,6 +12,5 @@ module.exports = {
             strategy: 'class',
         }),
         require('@tailwindcss/typography'),
-        rotateX,
     ],
 };
