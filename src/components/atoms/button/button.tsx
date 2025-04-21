@@ -25,6 +25,10 @@ export interface ButtonProps {
    * Is button disabled
    */
   disabled?: boolean;
+  /**
+   * Shadow elevation
+   */
+  elevation?: "none" | "100" | "200" | "300";
 }
 
 /**
@@ -37,18 +41,19 @@ export const Button = ({
   size = "medium",
   type = "button",
   disabled = false,
+  elevation = "none",
 }: ButtonProps) => {
   // Base classes
   const baseClasses = "rounded focus:outline-none focus:ring-2";
 
   // Size classes with typography
   const sizeClasses = {
-    small: "px-3 py-1.5 dc2", // Using caption style for small buttons
-    medium: "px-4 py-2 db2", // Using body medium style for regular buttons
-    large: "px-6 py-3 ds2", // Using subtitle style for large buttons
+    small: "px-3 py-1.5 dc2",
+    medium: "px-4 py-2 db2",
+    large: "px-6 py-3 ds2",
   };
 
-  // Variant classes using the zenbyte colors
+  // Variant classes using design system colors
   const variantClasses = {
     primary:
       "bg-zenbyte-indigo-500 hover:bg-zenbyte-indigo-600 text-zenbyte-white focus:ring-zenbyte-indigo-300",
@@ -60,6 +65,9 @@ export const Button = ({
       "bg-zenbyte-coral-400 hover:bg-red-600 text-zenbyte-white focus:ring-red-300",
   };
 
+  // Shadow classes
+  const shadowClasses = elevation === "none" ? "" : `shadow-${elevation}`;
+
   // Disabled classes
   const disabledClasses = disabled
     ? "opacity-50 cursor-not-allowed"
@@ -68,11 +76,17 @@ export const Button = ({
   return (
     <button
       type={type}
-      className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${disabledClasses}`}
+      className={`
+        ${baseClasses} 
+        ${sizeClasses[size]} 
+        ${variantClasses[variant]} 
+        ${shadowClasses} 
+        ${disabledClasses}
+      `}
       onClick={onClick}
       disabled={disabled}
     >
-      {children}
+      {children} {elevation !== "none" && `(shadow-${elevation})`}
     </button>
   );
 };

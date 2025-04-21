@@ -4,6 +4,7 @@ const plugin = require("tailwindcss/plugin");
 // Import theme files
 const colors = require("./src/themes/colours");
 const typography = require("./src/themes/typography");
+const Effects = require("./src/themes/Effects");
 
 module.exports = {
   content: [
@@ -24,6 +25,12 @@ module.exports = {
         ...typography.desktop,
         ...typography.mobile,
       },
+
+      // Add visual effects
+      boxShadow: Effects.shadows,
+      opacity: Effects.opacity,
+      blur: Effects.blur,
+      transitionDuration: Effects.transition,
     },
   },
   plugins: [
