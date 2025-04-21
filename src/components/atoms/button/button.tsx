@@ -39,13 +39,13 @@ export const Button = ({
   disabled = false,
 }: ButtonProps) => {
   // Base classes
-  const baseClasses = "font-medium rounded focus:outline-none focus:ring-2";
+  const baseClasses = "rounded focus:outline-none focus:ring-2";
 
-  // Size classes
+  // Size classes with typography
   const sizeClasses = {
-    small: "px-3 py-1.5 text-sm",
-    medium: "px-4 py-2",
-    large: "px-6 py-3 text-lg",
+    small: "px-3 py-1.5 dc2", // Using caption style for small buttons
+    medium: "px-4 py-2 db2", // Using body medium style for regular buttons
+    large: "px-6 py-3 ds2", // Using subtitle style for large buttons
   };
 
   // Variant classes using the zenbyte colors

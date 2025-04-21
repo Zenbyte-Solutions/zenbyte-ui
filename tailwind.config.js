@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
 
-// Import colors from separate file
+// Import theme files
 const colors = require("./src/themes/colours");
+const typography = require("./src/themes/typography");
 
 module.exports = {
   content: [
@@ -17,6 +18,12 @@ module.exports = {
     extend: {
       // Add imported colors to the theme
       colors: colors,
+
+      // Add typography scales
+      fontSize: {
+        ...typography.desktop,
+        ...typography.mobile,
+      },
     },
   },
   plugins: [
@@ -24,5 +31,32 @@ module.exports = {
       strategy: "class",
     }),
     require("@tailwindcss/typography"),
+
+    // Optional: Add utility classes for typography
+    plugin(function ({ addComponents }) {
+      const components = {};
+
+      // Add desktop typography components
+      Object.keys(typography.desktop).forEach((key) => {
+        components[`.${key}`] = {
+          fontSize: typography.desktop[key][0],
+          lineHeight: typography.desktop[key][1].lineHeight,
+          letterSpacing: typography.desktop[key][1].letterSpacing,
+          fontWeight: typography.desktop[key][1].fontWeight,
+        };
+      });
+
+      // Add mobile typography components
+      Object.keys(typography.mobile).forEach((key) => {
+        components[`.${key}`] = {
+          fontSize: typography.mobile[key][0],
+          lineHeight: typography.mobile[key][1].lineHeight,
+          letterSpacing: typography.mobile[key][1].letterSpacing,
+          fontWeight: typography.mobile[key][1].fontWeight,
+        };
+      });
+
+      addComponents(components);
+    }),
   ],
 };
