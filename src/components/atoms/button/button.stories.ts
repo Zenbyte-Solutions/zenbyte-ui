@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 
 // Storybook meta configuratie
 const meta = {
-  title: "Components/Button",
+  title: "atoms/Button",
   component: Button,
   parameters: {
     layout: "centered",
@@ -20,16 +20,16 @@ const meta = {
       options: Object.values(ButtonSize), // Gebruik de enum-waarden voor de size
     },
     children: {
-      control: "text",  // Je kunt de button-tekst in Storybook aanpassen
+      control: "text", // Je kunt de button-tekst in Storybook aanpassen
     },
     onClick: {
-      action: "clicked",  // Zorgt ervoor dat de click actie zichtbaar is in Storybook
+      action: "clicked", // Zorgt ervoor dat de click actie zichtbaar is in Storybook
     },
   },
   args: {
-    variant: ButtonVariant.Primary,  // Gebruik de ButtonVariant enum
-    size: ButtonSize.Default,        // Gebruik de ButtonSize enum
-    children: "Button",              // De tekst die in de knop komt
+    variant: ButtonVariant.Primary, // Gebruik de ButtonVariant enum
+    size: ButtonSize.Default, // Gebruik de ButtonSize enum
+    children: "Button", // De tekst die in de knop komt
   },
 } satisfies Meta<typeof Button>;
 
