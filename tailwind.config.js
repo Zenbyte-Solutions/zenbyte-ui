@@ -8,6 +8,7 @@ const effects = require("./src/themes/effects");
 const iconSizes = require("./src/themes/iconSizes");
 const spacings = require("./src/themes/spacings");
 const containerSizes = require("./src/themes/containerSizes");
+const borderRadius = require("./src/themes/borderRadius");
 
 module.exports = {
   content: [
@@ -20,6 +21,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      // Add border radius
+      borderRadius: borderRadius,
+
       // Add imported colors to the theme
       colors: colors,
 

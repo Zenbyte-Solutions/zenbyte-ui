@@ -1,3 +1,11 @@
+//src/themes/spacings.ts
+
+/**
+ * Zenbyte UI Spacings System
+ *
+ * This file contains spacing definitions used in the Zenbyte UI design system.
+ */
+
 const spacings = {
   // Vertical Spacings (8px increments)
   vertical: {

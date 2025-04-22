@@ -1,7 +1,9 @@
+// src/themes/typography.ts
+
 /**
  * Zenbyte UI Typography System
  *
- * Complete typography definitions for desktop and mobile views.
+ * This file contains complete typography definitions for desktop and mobile views.
  */
 
 module.exports = {

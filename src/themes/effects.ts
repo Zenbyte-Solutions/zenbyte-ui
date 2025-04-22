@@ -1,7 +1,9 @@
+// src/themes/effects.ts;
+
 /**
  * Zenbyte UI Visual Effects System
  *
- * A collection of visual effects including shadows and opacity scales.
+ * This file contains a collection of visual effects including shadows and opacity scales.
  */
 
 module.exports = {
