@@ -5,6 +5,7 @@ const plugin = require("tailwindcss/plugin");
 const colors = require("./src/themes/colours");
 const typography = require("./src/themes/typography");
 const effects = require("./src/themes/effects");
+const iconSizes = require("./src/themes/iconSizes");
 
 module.exports = {
   content: [
@@ -31,6 +32,14 @@ module.exports = {
       opacity: effects.opacity,
       blur: effects.blur,
       transitionDuration: effects.transition,
+
+      // Add icon sizes
+      width: {
+        ...iconSizes,
+      },
+      height: {
+        ...iconSizes,
+      },
     },
   },
   plugins: [
@@ -64,6 +73,20 @@ module.exports = {
       });
 
       addComponents(components);
+    }),
+
+    // Add icon size classes
+    plugin(function ({ addUtilities }) {
+      const iconUtilities = {};
+
+      Object.entries(iconSizes).forEach(([size, value]) => {
+        iconUtilities[`.icon-${size}`] = {
+          width: value,
+          height: value,
+        };
+      });
+
+      addUtilities(iconUtilities);
     }),
   ],
 };
