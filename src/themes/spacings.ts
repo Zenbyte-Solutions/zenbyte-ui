@@ -1,4 +1,4 @@
-//src/themes/spacings.ts
+// src/themes/spacings.ts
 
 /**
  * Zenbyte UI Spacings System
