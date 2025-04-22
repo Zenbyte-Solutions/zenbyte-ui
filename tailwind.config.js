@@ -6,6 +6,7 @@ const colors = require("./src/themes/colours");
 const typography = require("./src/themes/typography");
 const effects = require("./src/themes/effects");
 const iconSizes = require("./src/themes/iconSizes");
+const spacings = require("./src/themes/spacings");
 
 module.exports = {
   content: [
@@ -39,6 +40,18 @@ module.exports = {
       },
       height: {
         ...iconSizes,
+      },
+
+      // Add spacing utilities based on imported spacings
+      spacing: {
+        ...spacings.vertical,
+        ...spacings.horizontal,
+      },
+
+      // Vertical and horizontal gap utilities
+      gap: {
+        ...spacings.vertical,
+        ...spacings.horizontal,
       },
     },
   },
@@ -87,6 +100,29 @@ module.exports = {
       });
 
       addUtilities(iconUtilities);
+    }),
+
+    // Add spacing utilities
+    plugin(function ({ addUtilities }) {
+      const spacingUtilities = {
+        // Vertical spacing utilities
+        ...Object.keys(spacings.vertical).reduce((acc, size) => {
+          acc[`.vertical-spacing-${size}`] = {
+            gap: spacings.vertical[size],
+          };
+          return acc;
+        }, {}),
+
+        // Horizontal spacing utilities
+        ...Object.keys(spacings.horizontal).reduce((acc, size) => {
+          acc[`.horizontal-spacing-${size}`] = {
+            columnGap: spacings.horizontal[size],
+          };
+          return acc;
+        }, {}),
+      };
+
+      addUtilities(spacingUtilities);
     }),
   ],
 };
