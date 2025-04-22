@@ -7,6 +7,7 @@ const typography = require("./src/themes/typography");
 const effects = require("./src/themes/effects");
 const iconSizes = require("./src/themes/iconSizes");
 const spacings = require("./src/themes/spacings");
+const containerSizes = require("./src/themes/containerSizes");
 
 module.exports = {
   content: [
@@ -37,6 +38,7 @@ module.exports = {
       // Add icon sizes
       width: {
         ...iconSizes,
+        ...containerSizes,
       },
       height: {
         ...iconSizes,
@@ -52,6 +54,13 @@ module.exports = {
       gap: {
         ...spacings.vertical,
         ...spacings.horizontal,
+      },
+
+      // Container size utilities
+      maxWidth: {
+        desktop: containerSizes.desktop.default,
+        tablet: containerSizes.tablet.default,
+        mobile: containerSizes.mobile.default,
       },
     },
   },
@@ -120,6 +129,20 @@ module.exports = {
           };
           return acc;
         }, {}),
+
+        // Container utilities
+        ".container-desktop": {
+          maxWidth: containerSizes.desktop.default,
+          margin: "0 auto",
+        },
+        ".container-tablet": {
+          maxWidth: containerSizes.tablet.default,
+          margin: "0 auto",
+        },
+        ".container-mobile": {
+          maxWidth: containerSizes.mobile.default,
+          margin: "0 auto",
+        },
       };
 
       addUtilities(spacingUtilities);
