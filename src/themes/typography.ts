@@ -10,77 +10,77 @@ module.exports = {
   // Desktop Typography
   desktop: {
     // Title
-    dt1: [
+    displayLarge: [
       "60px",
       { lineHeight: "70px", letterSpacing: "-0.02em", fontWeight: 700 },
     ],
 
     // Headlines
-    dh1: [
+    headlineLarge: [
       "48px",
       { lineHeight: "58px", letterSpacing: "-0.01em", fontWeight: 600 },
     ],
-    dh2: [
+    headlineMedium: [
       "40px",
       { lineHeight: "48px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    dh3: [
+    headlineSmall: [
       "32px",
       { lineHeight: "38px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    dh4: [
+    headlineXSmall: [
       "28px",
       { lineHeight: "34px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    dh5: [
+    headlineXXSmall: [
       "24px",
       { lineHeight: "28px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    dh6: [
+    headlineXXXSmall: [
       "20px",
       { lineHeight: "28px", letterSpacing: "0em", fontWeight: 600 },
     ],
 
     // Subtitles
-    ds1: [
+    subtitleLarge: [
       "18px",
       { lineHeight: "28px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    ds2: [
+    subtitleSmall: [
       "16px",
       { lineHeight: "24px", letterSpacing: "0em", fontWeight: 600 },
     ],
 
     // Body
-    db1: [
+    bodyRegular: [
       "16px",
       { lineHeight: "24px", letterSpacing: "0em", fontWeight: 400 },
     ],
-    db2: [
+    bodyMedium: [
       "16px",
       { lineHeight: "24px", letterSpacing: "0em", fontWeight: 500 },
     ],
-    db3: [
+    bodySmallRegular: [
       "14px",
       { lineHeight: "20px", letterSpacing: "0em", fontWeight: 400 },
     ],
-    db4: [
+    bodySmallMedium: [
       "14px",
       { lineHeight: "20px", letterSpacing: "0em", fontWeight: 500 },
     ],
 
     // Captions
-    dc1: [
+    captionRegular: [
       "12px",
       { lineHeight: "16px", letterSpacing: "0em", fontWeight: 400 },
     ],
-    dc2: [
+    captionMedium: [
       "12px",
       { lineHeight: "16px", letterSpacing: "0em", fontWeight: 500 },
     ],
 
     // Label
-    dlabel: [
+    label: [
       "14px",
       { lineHeight: "20px", letterSpacing: "0em", fontWeight: 500 },
     ],
@@ -89,77 +89,77 @@ module.exports = {
   // Mobile Typography
   mobile: {
     // Title
-    mt1: [
+    displayLarge: [
       "48px",
       { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: 700 },
     ],
 
     // Headlines
-    mh1: [
+    headlineLarge: [
       "36px",
       { lineHeight: "42px", letterSpacing: "-0.01em", fontWeight: 600 },
     ],
-    mh2: [
+    headlineMedium: [
       "32px",
       { lineHeight: "38px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    mh3: [
+    headlineSmall: [
       "28px",
       { lineHeight: "33px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    mh4: [
+    headlineXSmall: [
       "24px",
       { lineHeight: "28px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    mh5: [
+    headlineXXSmall: [
       "20px",
       { lineHeight: "23px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    mh6: [
+    headlineXXXSmall: [
       "16px",
       { lineHeight: "19px", letterSpacing: "0em", fontWeight: 600 },
     ],
 
     // Subtitles
-    ms1: [
+    subtitleLarge: [
       "18px",
       { lineHeight: "28px", letterSpacing: "0em", fontWeight: 600 },
     ],
-    ms2: [
+    subtitleSmall: [
       "16px",
       { lineHeight: "24px", letterSpacing: "0em", fontWeight: 600 },
     ],
 
     // Body
-    mb1: [
+    bodyRegular: [
       "16px",
       { lineHeight: "24px", letterSpacing: "0em", fontWeight: 400 },
     ],
-    mb2: [
+    bodyMedium: [
       "16px",
       { lineHeight: "24px", letterSpacing: "0em", fontWeight: 500 },
     ],
-    mb3: [
+    bodySmallRegular: [
       "14px",
       { lineHeight: "20px", letterSpacing: "0em", fontWeight: 400 },
     ],
-    mb4: [
+    bodySmallMedium: [
       "14px",
       { lineHeight: "20px", letterSpacing: "0em", fontWeight: 500 },
     ],
 
     // Captions
-    mc1: [
+    captionRegular: [
       "12px",
       { lineHeight: "16px", letterSpacing: "0em", fontWeight: 400 },
     ],
-    mc2: [
+    captionMedium: [
       "12px",
       { lineHeight: "16px", letterSpacing: "0em", fontWeight: 500 },
     ],
 
     // Label
-    mlabel: [
+    label: [
       "16px",
       { lineHeight: "20px", letterSpacing: "0em", fontWeight: 500 },
     ],

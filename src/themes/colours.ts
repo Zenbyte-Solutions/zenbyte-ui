@@ -1,38 +1,37 @@
 // src/themes/colours.ts;
-
 /**
  * Zenbyte UI Color System
  *
- * This file contains all color definitions used in the Zenbyte UI design system.
+ * This file contains all color definitions used in the UI design system.
  */
 
 module.exports = {
   // Feedback Colors
-  "zenbyte-cyan": {
+  cyan: {
     400: "#00d3f3",
   },
-  "zenbyte-amber": {
+  amber: {
     300: "#FCD34D",
   },
-  "zenbyte-emerald": {
+  emerald: {
     400: "#34D399",
   },
-  "zenbyte-coral": {
+  coral: {
     400: "#FF6B6B",
   },
   // Content Colors
-  "zenbyte-gray": {
+  gray: {
     900: "#111827",
     700: "#374151",
     500: "#6B7280",
     200: "#E5E7EB",
     100: "#F5F5F4",
   },
-  "zenbyte-stone": {
+  stone: {
     100: "#F5F5F4",
   },
   // Primary Colors - Indigo shades
-  "zenbyte-indigo": {
+  indigo: {
     50: "#EEF2FF",
     100: "#E0E7FF",
     200: "#C7D2FE",
@@ -45,7 +44,7 @@ module.exports = {
     900: "#312E81",
   },
   // Special Colors
-  "zenbyte-shadow": "#131927",
-  "zenbyte-background": "#FBFBFB",
-  "zenbyte-white": "#FFFFFF",
+  shadow: "#131927",
+  background: "#FBFBFB",
+  white: "#FFFFFF",
 };
