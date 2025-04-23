@@ -9,11 +9,12 @@ const iconSizes = require("./src/themes/iconSizes");
 const spacings = require("./src/themes/spacings");
 const containerSizes = require("./src/themes/containerSizes");
 const borderRadius = require("./src/themes/borderRadius");
+const fonts = require("./src/themes/fonts");
 
 module.exports = {
   content: [
     "./App.tsx",
-    "./app/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,jsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -21,6 +22,10 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      // Add font families and weights
+      fontFamily: fonts.fontFamily,
+      fontWeight: fonts.fontWeight,
+
       // Add border radius
       borderRadius: borderRadius,
 
@@ -73,6 +78,14 @@ module.exports = {
       strategy: "class",
     }),
     require("@tailwindcss/typography"),
+
+    // Font loading plugin (fixed binding issue)
+    plugin(function ({ addBase }) {
+      addBase({
+        "@font-face": fonts.fontFace,
+        html: { fontFamily: "Roboto, sans-serif" },
+      });
+    }),
 
     // Optional: Add utility classes for typography
     plugin(function ({ addComponents }) {
