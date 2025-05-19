@@ -24,6 +24,7 @@ export { default as ZenbyteMultiSelectDropdown } from "./molecules/multi-select-
 export { default as ZenbyteFormContainer } from "./organisms/form-container/FormContainer";
 export { default as ZenbyteModal } from "./organisms/modal/Modal";
 export { default as ZenbyteTable } from "./organisms/table/Table";
+export { default as ZenbyteEditableTable } from "./organisms/editable-grid/EditableGrid";
 export { default as ZenbyteLeftNav } from "./organisms/leftnav/Leftnav";
 export { default as ZenbyteCreateItemModal } from "./organisms/form-container/FormContainer";
 export { default as ZenbyteLoginPage } from "./pages/login-page/LoginPage";

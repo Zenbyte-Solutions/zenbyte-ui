@@ -27,5 +27,6 @@ export { default as ZenbyteFormContainer } from "./zenbyte-components/organisms/
 export { default as ZenbyteLeftNav } from "./zenbyte-components/organisms/leftnav/Leftnav";
 export { default as ZenbyteModal } from "./zenbyte-components/organisms/modal/Modal";
 export { default as ZenbyteTable } from "./zenbyte-components/organisms/table/Table";
+export { default as ZenbyteEditableGrid } from "./zenbyte-components/organisms/editable-grid/EditableGrid";
 export { default as ZenbyteCreateItemModal } from "./zenbyte-components/organisms/form-container/FormContainer";
 export { default as ZenbyteLoginPage } from "./zenbyte-components/pages/login-page/LoginPage";

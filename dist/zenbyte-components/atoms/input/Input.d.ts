@@ -20,6 +20,7 @@ export interface InputProps {
      * Callback function when input value changes
      */
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onBlur?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     /**
      * Callback for validation status
      */
