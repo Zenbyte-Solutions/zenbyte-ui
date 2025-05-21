@@ -43,3 +43,17 @@ export const WithFilters: StoryObj<typeof ProductOverview> = {
     })),
   },
 };
+
+export const SetColumnsInARow: StoryObj<typeof ProductOverview> = {
+  args: {
+    products: Array.from({ length: 20 }, (_, i) => ({
+      imageUrl: "src/images/login.jpg",
+      title: `Product ${i + 1} met lange titel die misschien overloopt`,
+      discountPercentage: i % 3 === 0 ? 15 : undefined,
+      price: `${(Math.random() * 10 + 5).toFixed(2)}`,
+      category: i % 2 === 0 ? "Category A" : "Category B",
+      tags: i % 2 === 0 ? ["Tag A", "Tag B"] : ["Tag C"],
+    })),
+    cols: 2
+  },
+};

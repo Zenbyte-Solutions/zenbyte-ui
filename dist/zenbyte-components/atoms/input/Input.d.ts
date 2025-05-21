@@ -38,6 +38,7 @@ export interface InputProps {
      * Input type (text, password, email, etc.)
      */
     type?: string;
+    className?: string;
 }
 /**
  * Input component with multiple style variants

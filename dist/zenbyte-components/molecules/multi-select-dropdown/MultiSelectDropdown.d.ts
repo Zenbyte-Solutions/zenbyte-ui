@@ -16,6 +16,7 @@ export interface MultiSelectDropdownProps {
     disabled?: boolean;
     className?: string;
     errorMessage?: string;
+    dropDownLabel?: string;
     onChange?: (selectedValues: string[]) => void;
 }
 export declare const MultiSelectDropdown: React.FC<MultiSelectDropdownProps>;

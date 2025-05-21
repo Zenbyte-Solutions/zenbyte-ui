@@ -40,6 +40,18 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
     setCurrentPage(1);
   };
 
+  const gridColsClass =
+    {
+      1: "lg:grid-cols-1",
+      2: "lg:grid-cols-2",
+      3: "lg:grid-cols-3",
+      4: "lg:grid-cols-4",
+      5: "lg:grid-cols-5",
+      6: "lg:grid-cols-6",
+      7: "lg:grid-cols-7",
+      8: "lg:grid-cols-8",
+    }[cols] || "lg:grid-cols-4";
+
   // Verzamel unieke waarden
   const uniqueCategories = Array.from(
     new Set(products.map((p) => p.category).filter(Boolean))
@@ -135,7 +147,10 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
       ) : (
         <>
           <div
-            className={`grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-${cols} gap-4`}
+            className={classNames(
+              "grid grid-cols-1 sm:grid-cols-2 gap-4",
+              gridColsClass
+            )}
           >
             {paginatedProducts.map((product, index) => (
               <ProductCard key={index} {...product} />
