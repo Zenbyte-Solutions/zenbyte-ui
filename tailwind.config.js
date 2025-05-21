@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  presets: [require("../zenbyte-ui-components/tailwind.preset")],
+  presets: [require("../zenbyte-ui/tailwind.preset")],
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",

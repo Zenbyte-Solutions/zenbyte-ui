@@ -3,7 +3,6 @@ import { Container } from "./Container";
 import { FileText, Plus, Upload } from "lucide-react";
 import { Button } from "../button/Button";
 import { Table } from "../../organisms/table/Table";
-import React from "react";
 
 const meta: Meta<typeof Container> = {
   title: "Zenbyte/Atoms/Container",

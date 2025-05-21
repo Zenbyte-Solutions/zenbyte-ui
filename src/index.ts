@@ -4,6 +4,7 @@
 export { default as ZenbyteAvatar } from "./zenbyte-components/atoms/avatar/Avatar";
 export { default as ZenbyteButton } from "./zenbyte-components/atoms/button/Button";
 export { default as ZenbyteCheckbox } from "./zenbyte-components/atoms/checkbox/Checkbox";
+export { default as ZenbyteCard } from "./zenbyte-components/atoms/card/Card";
 export { default as ZenbyteDatePicker } from "./zenbyte-components/atoms/date-picker/DatePicker";
 export { default as ZenbyteContainer } from "./zenbyte-components/atoms/container/Container";
 export { default as ZenbyteFileUpload } from "./zenbyte-components/atoms/file-upload/FileUpload";
@@ -28,6 +29,7 @@ export { default as ZenbyteFormMultiSelectDropdown } from "./zenbyte-components/
 export { default as ZenbyteDropdownList } from "./zenbyte-components/molecules/dropdown-list/DropdownList";
 export { default as ZenbyteFilterSection } from "./zenbyte-components/molecules/filter-section/FilterSection";
 export { default as ZenbyteMultiSelectDropdown } from "./zenbyte-components/molecules/multi-select-dropdown/MultiSelectDropdown";
+export { default as ZenbyteProductCard } from "./zenbyte-components/molecules/product-card/ProductCard";
 
 // Export organisms
 export { default as ZenbyteFormContainer } from "./zenbyte-components/organisms/form-container/FormContainer";
@@ -36,6 +38,7 @@ export { default as ZenbyteModal } from "./zenbyte-components/organisms/modal/Mo
 export { default as ZenbyteTable } from "./zenbyte-components/organisms/table/Table";
 export { default as ZenbyteEditableGrid } from "./zenbyte-components/organisms/editable-grid/EditableGrid";
 export { default as ZenbyteCreateItemModal } from "./zenbyte-components/organisms/form-container/FormContainer";
+export { default as ProductOverview } from "./zenbyte-components/organisms/product-overview/ProductOverview";
 
 // Export pages
 export { default as ZenbyteLoginPage } from "./zenbyte-components/pages/login-page/LoginPage";

@@ -21,6 +21,7 @@ export interface MultiSelectDropdownProps {
   disabled?: boolean;
   className?: string;
   errorMessage?: string;
+  dropDownLabel?: string;
   onChange?: (selectedValues: string[]) => void;
 }
 
@@ -31,6 +32,7 @@ export const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({
   disabled = false,
   className,
   errorMessage,
+  dropDownLabel = "",
   onChange,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -91,7 +93,10 @@ export const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({
 
   return (
     <div
-      className={classNames("relative w-[300px] flex flex-col gap-1.5", className)}
+      className={classNames(
+        "relative w-[300px] flex flex-col gap-1.5",
+        className
+      )}
       ref={dropdownRef}
     >
       <label
@@ -101,7 +106,7 @@ export const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({
           disabled ? "text-zb-gray-400" : "text-zb-gray-700"
         )}
       >
-        Dropdown Label
+        {dropDownLabel}
         {errorMessage && <span className="ml-1 text-zb-coral-400">*</span>}
       </label>
 

@@ -2,6 +2,7 @@
 export { default as ZenbyteAvatar } from "./atoms/avatar/Avatar";
 export { default as ZenbyteButton } from "./atoms/button/Button";
 export { default as ZenbyteCheckbox } from "./atoms/checkbox/Checkbox";
+export { default as ZenbyteCard } from "./atoms/card/Card";
 export { default as ZenbyteDatePicker } from "./atoms/date-picker/DatePicker";
 export { default as ZenbyteContainer } from "./atoms/container/Container";
 export { default as ZenbyteFileUpload } from "./atoms/file-upload/FileUpload";
@@ -24,6 +25,7 @@ export { default as ZenbyteFormDropDownList } from "./atoms/form-components/form
 export { default as ZenbyteDropdownList } from "./molecules/dropdown-list/DropdownList";
 export { default as ZenbyteFilterSection } from "./molecules/filter-section/FilterSection";
 export { default as ZenbyteMultiSelectDropdown } from "./molecules/multi-select-dropdown/MultiSelectDropdown";
+export { default as ZenbyteProductCard } from "./molecules/product-card/ProductCard";
 
 // Organisms
 export { default as ZenbyteFormContainer } from "./organisms/form-container/FormContainer";

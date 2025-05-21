@@ -27,7 +27,7 @@ export const Card: React.FC<CardProps> = ({
   ...rest
 }) => {
   const cardClasses = classNames(
-    "p-6 transition",
+    "p-4 transition",
     {
       // Shadow
       "shadow-sm": shadow === "sm",

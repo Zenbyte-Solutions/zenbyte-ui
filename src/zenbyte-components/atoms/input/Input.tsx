@@ -81,6 +81,8 @@ export interface InputProps {
    * Input type (text, password, email, etc.)
    */
   type?: string;
+
+  className?: string;
 }
 
 /**
@@ -97,6 +99,7 @@ export const Input: React.FC<InputProps> = ({
   label,
   helperText,
   type,
+  className = ""
 }) => {
   // State to track input value
   const [value, setValue] = useState(initialValue);
@@ -339,7 +342,7 @@ const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
     : "text";
 
   return (
-    <div className="flex flex-col gap-1.5 w-full">
+    <div className={`flex flex-col gap-1.5 w-full ${className}`}>
       {/* Label */}
       {(label || current.label) && (
         <label
