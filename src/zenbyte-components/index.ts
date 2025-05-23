@@ -34,6 +34,8 @@ export { default as ZenbyteTable } from "./organisms/table/Table";
 export { default as ZenbyteEditableTable } from "./organisms/editable-grid/EditableGrid";
 export { default as ZenbyteLeftNav } from "./organisms/leftnav/Leftnav";
 export { default as ZenbyteCreateItemModal } from "./organisms/form-container/FormContainer";
+export { default as ZenbyteProductOverview } from "./organisms/product-overview/ProductOverview";
+export { default as ZenbyteProductDetail } from "./organisms/product-detail/ProductDetail";
 
 // Pages
 export { default as ZenbyteLoginPage } from "./pages/login-page/LoginPage";
