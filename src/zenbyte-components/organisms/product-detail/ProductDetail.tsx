@@ -3,6 +3,10 @@ import classNames from "classnames";
 import Button from "../../atoms/button/Button";
 import Card from "../../atoms/card/Card";
 import DropdownList from "../../molecules/dropdown-list/DropdownList";
+import ProductImageThumbnail from "../../atoms/product-image-thumbnail/ProductImageThumbnail";
+import PriceTag from "../../atoms/pricetag/pricetag";
+import StockIndicator from "../../atoms/stock-indicator/StockIndicator";
+import QuantitySelector from "../../molecules/quantity-selector/QuantitySelector";
 
 export interface ProductVariant {
   id: string;
@@ -41,14 +45,19 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
 }) => {
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
   const [selectedImage] = useState(images[0]);
-  const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
-  const [selectedVariantImage, setSelectedVariantImage] = useState<string | null>(null);
-  const [selectedVariantId, setSelectedVariantId] = useState<string | undefined>(undefined);
+  const [selectedOptions, setSelectedOptions] = useState<
+    Record<string, string>
+  >({});
+  const [selectedVariantImage, setSelectedVariantImage] = useState<
+    string | null
+  >(null);
+  const [selectedVariantId, setSelectedVariantId] = useState<
+    string | undefined
+  >(undefined);
   const [amount, setAmount] = useState(1);
   const [dynamicStock, setDynamicStock] = useState<number | null>(null);
   const [dynamicPrice, setDynamicPrice] = useState<number>(price);
 
-  // Genereer unieke key op basis van geselecteerde variant-opties
   const priceKey = useMemo(() => {
     return variants.map((v) => selectedOptions[v.name] || "").join(" - ");
   }, [selectedOptions, variants]);
@@ -58,7 +67,14 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     setDynamicStock(variantStockMap[priceKey] ?? null);
     setSelectedVariantImage(variantImageMap?.[priceKey] ?? null);
     setSelectedVariantId(variantIdMap?.[priceKey]);
-  }, [priceKey, price, variantPriceMap, variantStockMap, variantImageMap, variantIdMap]);
+  }, [
+    priceKey,
+    price,
+    variantPriceMap,
+    variantStockMap,
+    variantImageMap,
+    variantIdMap,
+  ]);
 
   useEffect(() => {
     if (variants.length > 0 && Object.keys(selectedOptions).length === 0) {
@@ -76,9 +92,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     setSelectedOptions((prev) => ({ ...prev, [variantName]: value }));
   };
 
-  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Math.max(1, Number(e.target.value));
-    setAmount(value);
+  const handleAmountChange = (value: number) => {
+    setAmount(Math.max(1, value));
   };
 
   const isVariantSelected = variants.every((v) => selectedOptions[v.name]);
@@ -89,17 +104,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       <div className="flex gap-2">
         <div className="flex flex-col gap-2">
           {images.map((img, index) => (
-            <img
+            <ProductImageThumbnail
               key={index}
               src={img}
               alt={`Thumbnail ${index}`}
-              className={classNames(
-                "w-24 h-24 object-cover cursor-pointer border rounded",
-                {
-                  "border-blue-500": hoveredImage === img,
-                  "opacity-70": hoveredImage !== img,
-                }
-              )}
+              isActive={hoveredImage === img}
               onMouseEnter={() => setHoveredImage(img)}
               onMouseLeave={() => setHoveredImage(null)}
             />
@@ -151,42 +160,14 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
 
       {/* Kolom 3: Prijs, voorraad, aantal, toevoegen */}
       <Card className="flex flex-col gap-4 max-h-[220px]">
-        <div className="text-zb-desktop-headlineXXXSmall font-semibold text-zb-primary">
-          <p>€{dynamicPrice.toFixed(2)}</p>
-        </div>
-
-        {isVariantSelected ? (
-          <div
-            className={classNames("text-zb-desktop-subtitleSmall", {
-              "text-green-600": dynamicStock && dynamicStock > 0,
-              "text-red-600": !dynamicStock || dynamicStock <= 0,
-            })}
-          >
-            {dynamicStock && dynamicStock > 0
-              ? `Op voorraad: ${dynamicStock}`
-              : "Niet op voorraad"}
-          </div>
-        ) : (
-          <div className="text-zb-desktop-subtitleSmall text-gray-600">
-            Kies een variant
-          </div>
-        )}
-
-        <div className="flex items-center gap-2">
-          <label htmlFor="amount" className="text-zb-desktop-bodySmallRegular">
-            Aantal:
-          </label>
-          <input
-            id="amount"
-            type="number"
-            min={1}
-            max={dynamicStock ?? 1}
-            value={amount}
-            onChange={handleAmountChange}
-            className="w-16 border rounded px-2 py-1"
-            disabled={!dynamicStock || dynamicStock <= 0}
-          />
-        </div>
+        <PriceTag price={dynamicPrice} />
+        <StockIndicator stock={dynamicStock} variantSelected={isVariantSelected} />
+        <QuantitySelector
+          amount={amount}
+          max={dynamicStock ?? 1}
+          onChange={handleAmountChange}
+          disabled={!dynamicStock || dynamicStock <= 0}
+        />
 
         <Button
           disabled={!isVariantSelected || !dynamicStock || dynamicStock <= 0}
@@ -197,7 +178,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
           showArrow
           color="primary"
         >
-          Voeg toe aan winkelwagen
+          Add to Cart
         </Button>
       </Card>
     </div>

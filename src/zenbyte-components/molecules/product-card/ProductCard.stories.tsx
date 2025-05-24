@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import ProductCard, { ProductCardProps } from "./ProductCard";
 
 const meta: Meta<typeof ProductCard> = {
-  title: "Zenbyte/Molecules/ProductCard",
+  title: "Zenbyte/Molecules/Ecommerce/ProductCard",
   component: ProductCard,
   tags: ["autodocs"],
   args: {

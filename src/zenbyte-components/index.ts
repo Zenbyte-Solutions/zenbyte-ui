@@ -7,6 +7,8 @@ export { default as ZenbyteDatePicker } from "./atoms/date-picker/DatePicker";
 export { default as ZenbyteContainer } from "./atoms/container/Container";
 export { default as ZenbyteFileUpload } from "./atoms/file-upload/FileUpload";
 export { default as ZenbyteInput } from "./atoms/input/Input";
+export { default as ZenbyteInputNumber } from "./atoms/numberinput/NumberInput";
+export { default as ZenbyteStepper } from "./atoms/stepper/Stepper";
 export { default as ZenbyteMenuItem } from "./atoms/menu-item/MenuItem";
 export { default as ZenbytePagination } from "./atoms/pagination/Pagination";
 export { default as ZenbyteRadioButton } from "./atoms/radio-button/RadioButton";
@@ -20,6 +22,8 @@ export { default as ZenbyteFormCheckbox } from "./atoms/form-components/form-che
 export { default as ZenbyteFormTextArea } from "./atoms/form-components/form-textarea/FormTextArea";
 export { default as ZenbyteFormRadioButton } from "./atoms/form-components/form-radiobutton/FormRadioButton";
 export { default as ZenbyteFormDropDownList } from "./atoms/form-components/form-dropdown-list/FormDropdownList";
+
+export { default as ZenbyteProductImageThumbnail } from "./atoms/product-image-thumbnail/ProductImageThumbnail";
 
 // Molecules
 export { default as ZenbyteDropdownList } from "./molecules/dropdown-list/DropdownList";

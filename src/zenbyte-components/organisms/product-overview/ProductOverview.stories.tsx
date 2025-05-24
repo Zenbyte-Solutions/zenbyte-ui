@@ -2,7 +2,7 @@ import ProductOverview from "./ProductOverview";
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {
-  title: "Zenbyte/Organisms/ProductOverview",
+  title: "Zenbyte/Organisms/Ecommerce/ProductOverview",
   component: ProductOverview,
 } as Meta<typeof ProductOverview>;
 

@@ -9,6 +9,8 @@ export { default as ZenbyteDatePicker } from "./zenbyte-components/atoms/date-pi
 export { default as ZenbyteContainer } from "./zenbyte-components/atoms/container/Container";
 export { default as ZenbyteFileUpload } from "./zenbyte-components/atoms/file-upload/FileUpload";
 export { default as ZenbyteInput } from "./zenbyte-components/atoms/input/Input";
+export { default as ZenbyteNumberInput } from "./zenbyte-components/atoms/numberinput/NumberInput";
+export { default as ZenbyteStepper } from "./zenbyte-components/atoms/stepper/Stepper";
 export { default as ZenbyteMenuItem } from "./zenbyte-components/atoms/menu-item/MenuItem";
 export { default as ZenbytePagination } from "./zenbyte-components/atoms/pagination/Pagination";
 export { default as ZenbyteRadioButton } from "./zenbyte-components/atoms/radio-button/RadioButton";
@@ -24,6 +26,9 @@ export { default as ZenbyteFormRadioButton } from "./zenbyte-components/atoms/fo
 export { default as ZenbyteFormDatePicker } from "./zenbyte-components/atoms/form-components/form-datepicker/FormDatePicker";
 export { default as ZenbyteFormDropDownList } from "./zenbyte-components/atoms/form-components/form-dropdown-list/FormDropdownList";
 export { default as ZenbyteFormMultiSelectDropdown } from "./zenbyte-components/atoms/form-components/form-multi-select-dropdown/FormMultiSelectDropdown";
+
+// Export ecommerce atoms
+export { default as ZenbyteProductImageThumbnail } from "./zenbyte-components/atoms/product-image-thumbnail/ProductImageThumbnail";
 
 // Export molecules
 export { default as ZenbyteDropdownList } from "./zenbyte-components/molecules/dropdown-list/DropdownList";
