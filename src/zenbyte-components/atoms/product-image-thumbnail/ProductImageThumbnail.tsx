@@ -20,7 +20,7 @@ const ProductImageThumbnail: React.FC<ProductImageThumbnailProps> = ({
     src={src}
     alt={alt}
     className={classNames(
-      "w-24 h-24 object-cover border rounded",
+      "w-40 object-cover border rounded",
       {
         "border-zb-indigo-500": isActive,
         "opacity-70": !isActive,

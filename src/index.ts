@@ -35,6 +35,7 @@ export { default as ZenbyteDropdownList } from "./zenbyte-components/molecules/d
 export { default as ZenbyteFilterSection } from "./zenbyte-components/molecules/filter-section/FilterSection";
 export { default as ZenbyteMultiSelectDropdown } from "./zenbyte-components/molecules/multi-select-dropdown/MultiSelectDropdown";
 export { default as ZenbyteProductCard } from "./zenbyte-components/molecules/product-card/ProductCard";
+export { default as ZenbyteImageGallery } from "./zenbyte-components/molecules/image-gallery/ImageGallery";
 
 // Export organisms
 export { default as ZenbyteFormContainer } from "./zenbyte-components/organisms/form-container/FormContainer";

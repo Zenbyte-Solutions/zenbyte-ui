@@ -7,6 +7,7 @@ import ProductImageThumbnail from "../../atoms/product-image-thumbnail/ProductIm
 import PriceTag from "../../atoms/pricetag/pricetag";
 import StockIndicator from "../../atoms/stock-indicator/StockIndicator";
 import QuantitySelector from "../../molecules/quantity-selector/QuantitySelector";
+import ImageGallery from "../../molecules/image-gallery/ImageGallery";
 
 export interface ProductVariant {
   id: string;
@@ -101,34 +102,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Kolom 1: Kleine afbeeldingen */}
-      <div className="flex gap-2">
-        <div className="flex flex-col gap-2">
-          {images.map((img, index) => (
-            <ProductImageThumbnail
-              key={index}
-              src={img}
-              alt={`Thumbnail ${index}`}
-              isActive={hoveredImage === img}
-              onMouseEnter={() => setHoveredImage(img)}
-              onMouseLeave={() => setHoveredImage(null)}
-            />
-          ))}
-        </div>
-        <div className="flex flex-col gap-4">
-          <img
-            src={
-              hoveredImage
-                ? hoveredImage
-                : isVariantSelected && selectedVariantImage
-                ? selectedVariantImage
-                : selectedImage
-            }
-            alt="Selected image"
-            className="w-full h-auto max-w-[400px] object-contain rounded border"
-          />
-        </div>
-      </div>
-
+      <ImageGallery
+        images={images}
+        fallbackImage={selectedImage}
+        variantImage={isVariantSelected ? selectedVariantImage : null}
+      />
       {/* Kolom 2: Titel + Variants + Bullet points */}
       <div className="flex flex-col gap-4">
         <h2 className="text-zb-desktop-headlineXXXSmall">{title}</h2>
@@ -161,7 +139,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       {/* Kolom 3: Prijs, voorraad, aantal, toevoegen */}
       <Card className="flex flex-col gap-4 max-h-[220px]">
         <PriceTag price={dynamicPrice} />
-        <StockIndicator stock={dynamicStock} variantSelected={isVariantSelected} />
+        <StockIndicator
+          stock={dynamicStock}
+          variantSelected={isVariantSelected}
+        />
         <QuantitySelector
           amount={amount}
           max={dynamicStock ?? 1}
