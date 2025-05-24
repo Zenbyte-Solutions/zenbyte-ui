@@ -25,8 +25,8 @@ export interface ContainerProps {
 }
 
 export const Container: React.FC<ContainerProps> = ({
-  title = "No items found",
-  description = "Add new items to get started",
+  title = "",
+  description = "",
   icon,
   action,
   shadow = "md",

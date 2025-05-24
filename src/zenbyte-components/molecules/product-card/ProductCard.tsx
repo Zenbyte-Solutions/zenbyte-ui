@@ -41,7 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-40 object-cover rounded-md mb-4"
+          className="w-full h-40 object-contain rounded-md mb-4"
         />
 
         {discountPercentage !== undefined && (

@@ -5,8 +5,9 @@ interface ProductImageThumbnailProps {
   src: string;
   alt: string;
   isActive: boolean;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  className?: string;
 }
 
 const ProductImageThumbnail: React.FC<ProductImageThumbnailProps> = ({
@@ -15,6 +16,7 @@ const ProductImageThumbnail: React.FC<ProductImageThumbnailProps> = ({
   isActive,
   onMouseEnter,
   onMouseLeave,
+  className
 }) => (
   <img
     src={src}
@@ -25,7 +27,7 @@ const ProductImageThumbnail: React.FC<ProductImageThumbnailProps> = ({
         "border-zb-indigo-500": isActive,
         "opacity-70": !isActive,
         "cursor-pointer": isActive
-      }
+      }, className
     )}
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}

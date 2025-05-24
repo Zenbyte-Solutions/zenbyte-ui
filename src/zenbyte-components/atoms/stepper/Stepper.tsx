@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useId } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
 interface StepperProps {
@@ -21,6 +21,7 @@ export const Stepper: React.FC<StepperProps> = ({
   className = "",
 }) => {
   const [inputValue, setInputValue] = useState(value.toString());
+  const inputKey = useId(); // Unique key for this Stepper instance
 
   useEffect(() => {
     setInputValue(value.toString());
@@ -56,6 +57,7 @@ export const Stepper: React.FC<StepperProps> = ({
   return (
     <div className={`flex items-center gap-1 ${className}`}>
       <input
+        key={inputKey}
         type="text"
         value={inputValue}
         onChange={handleInputChange}

@@ -9,7 +9,7 @@ export default {
 export const Default: StoryObj<typeof ProductOverview> = {
   args: {
     products: Array.from({ length: 20 }, (_, i) => ({
-      imageUrl: "src/images/login.jpg",
+      imageUrl: "src/images/ipad-silver.jpg",
       title: `Product ${i + 1} met lange titel die misschien overloopt`,
       discountPercentage: i % 3 === 0 ? 15 : undefined,
       price: `${(Math.random() * 10 + 5).toFixed(2)}`,

@@ -36,6 +36,8 @@ export { default as ZenbyteFilterSection } from "./zenbyte-components/molecules/
 export { default as ZenbyteMultiSelectDropdown } from "./zenbyte-components/molecules/multi-select-dropdown/MultiSelectDropdown";
 export { default as ZenbyteProductCard } from "./zenbyte-components/molecules/product-card/ProductCard";
 export { default as ZenbyteImageGallery } from "./zenbyte-components/molecules/image-gallery/ImageGallery";
+export { default as ZenbyteCartItem } from "./zenbyte-components/molecules/cart-item/CartItem";
+export { default as ZenbyteSubTotalCard } from "./zenbyte-components/molecules/sub-total-card/SubTotalCard";
 
 // Export organisms
 export { default as ZenbyteFormContainer } from "./zenbyte-components/organisms/form-container/FormContainer";
@@ -44,8 +46,9 @@ export { default as ZenbyteModal } from "./zenbyte-components/organisms/modal/Mo
 export { default as ZenbyteTable } from "./zenbyte-components/organisms/table/Table";
 export { default as ZenbyteEditableGrid } from "./zenbyte-components/organisms/editable-grid/EditableGrid";
 export { default as ZenbyteCreateItemModal } from "./zenbyte-components/organisms/form-container/FormContainer";
-export { default as ProductOverview } from "./zenbyte-components/organisms/product-overview/ProductOverview";
-export { default as ProductDetail } from "./zenbyte-components/organisms/product-detail/ProductDetail";
+export { default as ZenbyteProductOverview } from "./zenbyte-components/organisms/product-overview/ProductOverview";
+export { default as ZenbyteProductDetail } from "./zenbyte-components/organisms/product-detail/ProductDetail";
+export { default as ZenbyteCartList } from "./zenbyte-components/organisms/cart-list/CartList";
 
 // Export pages
 export { default as ZenbyteLoginPage } from "./zenbyte-components/pages/login-page/LoginPage";

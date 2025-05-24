@@ -30,6 +30,8 @@ export { default as ZenbyteDropdownList } from "./molecules/dropdown-list/Dropdo
 export { default as ZenbyteFilterSection } from "./molecules/filter-section/FilterSection";
 export { default as ZenbyteMultiSelectDropdown } from "./molecules/multi-select-dropdown/MultiSelectDropdown";
 export { default as ZenbyteProductCard } from "./molecules/product-card/ProductCard";
+export { default as ZenbyteCartItem } from "./molecules/cart-item/CartItem";
+export { default as ZenbyteSubTotalCard } from "./molecules/sub-total-card/SubTotalCard";
 
 // Organisms
 export { default as ZenbyteFormContainer } from "./organisms/form-container/FormContainer";
@@ -40,6 +42,7 @@ export { default as ZenbyteLeftNav } from "./organisms/leftnav/Leftnav";
 export { default as ZenbyteCreateItemModal } from "./organisms/form-container/FormContainer";
 export { default as ZenbyteProductOverview } from "./organisms/product-overview/ProductOverview";
 export { default as ZenbyteProductDetail } from "./organisms/product-detail/ProductDetail";
+export { default as ZenbyteCartList } from "./organisms/cart-list/CartList";
 
 // Pages
 export { default as ZenbyteLoginPage } from "./pages/login-page/LoginPage";
