@@ -49,6 +49,7 @@ export { default as ZenbyteModal } from "./zenbyte-components/organisms/modal/Mo
 export { default as ZenbyteProductDetail } from "./zenbyte-components/organisms/product-detail/ProductDetail";
 export { default as ZenbyteProductOverview } from "./zenbyte-components/organisms/product-overview/ProductOverview";
 export { default as ZenbyteTable } from "./zenbyte-components/organisms/table/Table";
+export { default as ZenbyteTopNav } from "./zenbyte-components/organisms/topnav/TopNav";
 
 // Export pages
 export { default as ZenbyteLoginPage } from "./zenbyte-components/pages/login-page/LoginPage";
