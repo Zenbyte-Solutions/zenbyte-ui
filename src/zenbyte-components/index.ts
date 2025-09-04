@@ -8,6 +8,7 @@ export { default as ZenbyteDatePicker } from "./atoms/date-picker/DatePicker";
 export { default as ZenbyteFileUpload } from "./atoms/file-upload/FileUpload";
 export { default as ZenbyteInput } from "./atoms/input/Input";
 export { default as ZenbyteNumberInput } from "./atoms/numberinput/NumberInput";
+export { default as ZenbytePageTitle } from "./atoms/page-title/PageTitle";
 export { default as ZenbyteStepper } from "./atoms/stepper/Stepper";
 export { default as ZenbyteMenuItem } from "./atoms/menu-item/MenuItem";
 export { default as ZenbytePagination } from "./atoms/pagination/Pagination";
@@ -24,6 +25,8 @@ export { default as ZenbyteFormInput } from "./atoms/form-components/form-input/
 export { default as ZenbyteFormMultiSelectDropdown } from "./atoms/form-components/form-multi-select-dropdown/FormMultiSelectDropdown";
 export { default as ZenbyteFormRadioButton } from "./atoms/form-components/form-radiobutton/FormRadioButton";
 export { default as ZenbyteFormTextArea } from "./atoms/form-components/form-textarea/FormTextArea";
+export { default as ZenbyteFormDynamicArray } from "./atoms/form-components/form-dynamic-array/FormDynamicArray";
+export { default as ZenbyteFormNumberInput } from "./atoms/form-components/form-numberinput/FormNumberInput";
 
 // Export ecommerce atoms
 export { default as ZenbyteProductImageThumbnail } from "./atoms/product-image-thumbnail/ProductImageThumbnail";

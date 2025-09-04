@@ -51,9 +51,30 @@ export const Form = ({
     const allFields = Object.keys((schema as z.ZodObject<any>).shape);
     const completeValues: Record<string, any> = { ...values };
 
+    // Only set defaults for fields that are completely missing AND are not optional
     for (const field of allFields) {
-      if (!(field in completeValues)) {
-        completeValues[field] = ""; // of andere default zoals [] voor multiselects
+      if (!(field in completeValues) || completeValues[field] === undefined) {
+        const fieldSchema = (schema as z.ZodObject<any>).shape[field];
+        
+        // Check if field is optional
+        const isOptional = fieldSchema && fieldSchema._def.typeName === "ZodOptional";
+        
+        if (!isOptional) {
+          // Only set empty string for non-optional string-like fields
+          // For other types (numbers, dates, arrays), leave them undefined so Zod can show proper error
+          const innerType = isOptional ? fieldSchema._def.innerType : fieldSchema;
+          const typeName = innerType?._def?.typeName;
+          
+          if (typeName === "ZodString") {
+            completeValues[field] = "";
+          }
+          // For arrays, set empty array
+          else if (typeName === "ZodArray") {
+            completeValues[field] = [];
+          }
+          // For other types (ZodNumber, ZodDate, etc), leave as undefined
+          // This lets Zod show the proper validation message instead of type conversion errors
+        }
       }
     }
 

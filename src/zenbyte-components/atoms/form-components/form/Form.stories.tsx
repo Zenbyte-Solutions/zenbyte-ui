@@ -8,6 +8,9 @@ import { FormRadioButton } from "../form-radiobutton/FormRadioButton";
 import { FormDatePicker } from "../form-datepicker/FormDatePicker";
 import { FormDropdownList } from "../form-dropdown-list/FormDropdownList";
 import { FormMultiSelectDropdown } from "../form-multi-select-dropdown/FormMultiSelectDropdown";
+import { FormDynamicArray } from "../form-dynamic-array/FormDynamicArray";
+import { FormNumberInput } from "../form-numberinput/FormNumberInput";
+import React from "react";
 
 const meta: Meta<typeof Form> = {
   title: "Zenbyte/Atoms/Form",
@@ -48,6 +51,11 @@ export const Default: Story = {
       }),
       listoptions: z.string().min(1, "Choose a option"),
       multioptions: z.array(z.string()).min(1, "Select at least one option"),
+      quantity: z.number().min(1, "Quantity must be at least 1").max(100, "Maximum 100 items"),
+      price: z.number().min(0.01, "Price must be greater than 0"),
+      features: z.array(z.string().min(1, "Feature cannot be empty"))
+        .min(1, "At least one feature is required")
+        .max(5, "Maximum 5 features allowed"),
     });
 
     const handleSubmit = (values: Record<string, string>) => {
@@ -60,7 +68,7 @@ export const Default: Story = {
         schema={userSchema}
         onSubmit={handleSubmit}
         buttonText="Submit"
-        initialValues={{ teamNumber: "Prefilled" }}
+        initialValues={{ teamNumber: "Prefilled", features: ["Great quality"], quantity: 5, price: 0 }}
       >
         <FormDatePicker
           name="eventDate"
@@ -132,6 +140,30 @@ export const Default: Story = {
             { label: "Multi optie 2", value: "multi2" },
             { label: "Multi optie 3", value: "multi3", disabled: true },
           ]}
+        />
+        <FormNumberInput
+          name="quantity"
+          label="Quantity"
+          placeholder="Enter quantity"
+          min={1}
+          max={100}
+          helperText="Number of items (1-100)"
+        />
+        <FormNumberInput
+          name="price"
+          label="Price"
+          placeholder="0.00"
+          min={0.01}
+          step={0.01}
+          helperText="Price in euros"
+        />
+        <FormDynamicArray
+          name="features"
+          label="Product Features"
+          placeholder="Enter a product feature"
+          helperText="Add key features (1-5 items)"
+          minItems={1}
+          maxItems={5}
         />
       </Form>
     );

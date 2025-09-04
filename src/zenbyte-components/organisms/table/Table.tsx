@@ -260,7 +260,7 @@ export const Table = <T extends object>({
                   {column.sortable && (
                     <span
                       className={`transition-colors text-xs ${
-                        isSorted ? "text-zb-indigo-600" : "text-zb-gray-400"
+                        isSorted ? "text-zb-indigo-600" : "text-zb-gray-500"
                       }`}
                     >
                       {sortIcon || "⇅"}
@@ -282,7 +282,7 @@ export const Table = <T extends object>({
         <tr>
           <td
             colSpan={columns.length}
-            className="px-4 py-8 text-center text-zb-desktop-bodyRegular text-zb-gray-500"
+            className="px-2 md:px-4 py-4 md:py-8 text-center text-zb-mobile-bodyRegular md:text-zb-desktop-bodyRegular text-zb-gray-500"
           >
             Loading...
           </td>
@@ -295,7 +295,7 @@ export const Table = <T extends object>({
         <tr>
           <td
             colSpan={columns.length}
-            className="px-4 py-8 text-center text-zb-desktop-bodyRegular text-zb-gray-500"
+            className="px-2 md:px-4 py-4 md:py-8 text-center text-zb-mobile-bodyRegular md:text-zb-desktop-bodyRegular text-zb-gray-500"
           >
             {emptyState || "No data available"}
           </td>
@@ -308,10 +308,9 @@ export const Table = <T extends object>({
 
   return (
     <div className={`flex flex-col w-full ${className}`}>
-      {/* Table */}
-      <div className="overflow-x-auto bg-white rounded-lg shadow-sm border border-zb-gray-200">
-        {/* Filter section */}
-        {filterProps?.show && (
+      {/* Filter section - outside scrollable area */}
+      {filterProps?.show && (
+        <div className="bg-zb-white rounded-t-zb-cards shadow-sm border border-zb-gray-200 border-b-0">
           <FilterSection
             {...filterProps}
             onPrimaryButtonClick={() =>
@@ -325,10 +324,15 @@ export const Table = <T extends object>({
               filterProps.onSearchClear?.();
             }}
           />
-        )}
-        <table className="w-full table-auto">
-          {renderTableHeader()}
-          <tbody>
+        </div>
+      )}
+      {/* Table - separate scrollable container */}
+      <div className={`overflow-x-auto bg-zb-white shadow-sm border border-zb-gray-200 ${
+        filterProps?.show ? 'rounded-b-zb-cards rounded-t-none' : 'rounded-zb-cards'
+      }`}>
+        <table className="w-full table-fixed min-w-[800px] lg:min-w-full">
+            {renderTableHeader()}
+            <tbody>
             {renderEmptyState() ||
               paginatedData.map((row, rowIndex) => {
                 const rowKey = getRowKey(row, rowIndex);
@@ -351,7 +355,7 @@ export const Table = <T extends object>({
                     {columns.map((column) => (
                       <td
                         key={`${rowKey}-${column.id}`}
-                        className="px-4 py-3 text-zb-desktop-bodyRegular text-zb-gray-900"
+                        className="px-2 md:px-4 py-2 md:py-3 text-zb-mobile-bodySmallRegular md:text-zb-desktop-bodyRegular text-zb-gray-900"
                       >
                         {column.cell(row, rowIndex)}
                       </td>
@@ -359,11 +363,11 @@ export const Table = <T extends object>({
                   </tr>
                 );
               })}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
         {/* Pagination */}
         {paginationProps?.show && (
-          <div className="m-4">
+          <div className="m-2 md:m-4">
             <Pagination
               currentPage={currentPage}
               totalItems={data.length}

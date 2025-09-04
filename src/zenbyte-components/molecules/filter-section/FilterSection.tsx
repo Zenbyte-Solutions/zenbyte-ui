@@ -103,13 +103,13 @@ export const FilterSection: React.FC<FilterSectionProps> = ({
   onSecondaryButtonClick,
 }) => {
   return (
-    <div className="flex flex-col gap-4 p-4 bg-white rounded-lg">
+    <div className="flex flex-col gap-4 p-4 bg-transparent">
       {/* Filter controls row */}
       <div className="flex items-center gap-4">
         <div className="h-full mt-auto flex-row flex">
           <div className="mr-4">
             <div className="mb-1">
-              <label className="text-zb-desktop-bodySmallRegular " htmlFor="">
+              <label className="text-zb-desktop-bodySmallRegular" htmlFor="">
                 Search
               </label>
             </div>
