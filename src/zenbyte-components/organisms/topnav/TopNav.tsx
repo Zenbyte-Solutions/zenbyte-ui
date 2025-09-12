@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { ShoppingCart, User, Menu, X } from "lucide-react";
 import { Avatar } from "../../atoms/avatar/Avatar";
-import { NavLink } from "react-router-dom";
 
 interface Page {
   label: string;
   href: string;
+  onClick?: () => void; // callback in plaats van router link
 }
 
 interface TopNavProps {
@@ -57,13 +57,17 @@ const TopNav: React.FC<TopNavProps> = ({
         {/* Middle: pages (desktop only) */}
         <nav className="hidden md:flex gap-6">
           {pages.map((page) => (
-            <NavLink
+            <button
               key={page.href}
-              to={page.href}
+              onClick={() => {
+                page.onClick && page.onClick();
+                setMobileMenuOpen(false);
+              }}
               className="text-zb-desktop-bodySmallMedium transition-all hover:underline"
+              type="button"
             >
               {page.label}
-            </NavLink>
+            </button>
           ))}
         </nav>
 
@@ -83,6 +87,7 @@ const TopNav: React.FC<TopNavProps> = ({
             <button
               className="flex items-center gap-1 text-zb-desktop-bodySmallMedium text-gray-700 hover:underline"
               onClick={onLoginClick}
+              type="button"
             >
               <User className="w-5 h-5" />
               <span className="hidden md:inline">Inloggen</span>
@@ -93,6 +98,7 @@ const TopNav: React.FC<TopNavProps> = ({
             className="relative"
             onClick={onCartClick}
             aria-label="Winkelwagen openen"
+            type="button"
           >
             <ShoppingCart className="w-6 h-6" />
             {cartItemCount > 0 && (
@@ -114,14 +120,17 @@ const TopNav: React.FC<TopNavProps> = ({
           }`}
         >
           {pages.map((page) => (
-            <NavLink
+            <button
               key={page.href}
-              to={page.href}
+              onClick={() => {
+                page.onClick && page.onClick();
+                setMobileMenuOpen(false);
+              }}
               className="block py-2 text-zb-desktop-captionRegular text-gray-700 hover:underline"
-              onClick={() => setMobileMenuOpen(false)}
+              type="button"
             >
               {page.label}
-            </NavLink>
+            </button>
           ))}
         </div>
       )}

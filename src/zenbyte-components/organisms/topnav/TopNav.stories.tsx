@@ -1,18 +1,10 @@
-// TopNav.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import TopNav from "./TopNav";
-import { MemoryRouter } from "react-router-dom";
+import { action } from "@storybook/addon-actions";
 
 const meta: Meta<typeof TopNav> = {
   title: "Zenbyte/Organisms/TopNav",
   component: TopNav,
-  decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
-  ],
   parameters: {
     layout: "fullscreen",
     viewport: {
@@ -28,6 +20,24 @@ const meta: Meta<typeof TopNav> = {
 
 export default meta;
 type Story = StoryObj<typeof TopNav>;
+
+const pagesWithActions = [
+  {
+    label: "Home",
+    href: "/",
+    onClick: () => console.log("navigate-home"),
+  },
+  {
+    label: "Shop",
+    href: "/shop",
+    onClick: () => console.log("navigate-shop"),
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+    onClick: () => console.log("navigate-contact"),
+  },
+];
 
 export const Default: Story = {
   args: {
@@ -71,10 +81,6 @@ export const MobileWithPages: Story = {
       avatarUrl: "https://i.pravatar.cc/150?img=3",
     },
     cartItemCount: 3,
-    pages: [
-      { label: "Home", href: "/" },
-      { label: "Shop", href: "/shop" },
-      { label: "Contact", href: "/contact" },
-    ],
+    pages: pagesWithActions,
   },
 };
