@@ -27,6 +27,7 @@ export { default as ZenbyteFormRadioButton } from "./atoms/form-components/form-
 export { default as ZenbyteFormTextArea } from "./atoms/form-components/form-textarea/FormTextArea";
 export { default as ZenbyteFormDynamicArray } from "./atoms/form-components/form-dynamic-array/FormDynamicArray";
 export { default as ZenbyteFormNumberInput } from "./atoms/form-components/form-numberinput/FormNumberInput";
+export { default as ZenbyteFormSelector, type SelectorOption } from "./atoms/form-components/form-selector/FormSelector";
 
 // Export ecommerce atoms
 export { default as ZenbyteProductImageThumbnail } from "./atoms/product-image-thumbnail/ProductImageThumbnail";
