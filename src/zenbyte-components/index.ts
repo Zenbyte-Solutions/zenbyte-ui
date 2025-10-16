@@ -28,6 +28,7 @@ export { default as ZenbyteFormTextArea } from "./atoms/form-components/form-tex
 export { default as ZenbyteFormDynamicArray } from "./atoms/form-components/form-dynamic-array/FormDynamicArray";
 export { default as ZenbyteFormNumberInput } from "./atoms/form-components/form-numberinput/FormNumberInput";
 export { default as ZenbyteFormSelector, type SelectorOption } from "./atoms/form-components/form-selector/FormSelector";
+export { default as ZenbyteFormImageUpload } from "./atoms/form-components/form-imageupload/FormImageUpload";
 
 // Export ecommerce atoms
 export { default as ZenbyteProductImageThumbnail } from "./atoms/product-image-thumbnail/ProductImageThumbnail";

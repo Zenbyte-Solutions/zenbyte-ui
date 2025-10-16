@@ -30,6 +30,7 @@ export { default as ZenbyteFormTextArea } from "./zenbyte-components/atoms/form-
 export { default as ZenbyteFormDynamicArray } from "./zenbyte-components/atoms/form-components/form-dynamic-array/FormDynamicArray";
 export { default as ZenbyteFormNumberInput } from "./zenbyte-components/atoms/form-components/form-numberinput/FormNumberInput";
 export {default as ZenbyteFormSelector} from "./zenbyte-components/atoms/form-components/form-selector/FormSelector";
+export { default as ZenbyteFormImageUpload } from "./zenbyte-components/atoms/form-components/form-imageupload/FormImageUpload";
 
 // Export ecommerce atoms
 export { default as ZenbyteProductImageThumbnail } from "./zenbyte-components/atoms/product-image-thumbnail/ProductImageThumbnail";
