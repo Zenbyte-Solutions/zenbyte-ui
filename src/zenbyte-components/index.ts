@@ -33,6 +33,13 @@ export { default as ZenbyteFormImageUpload } from "./atoms/form-components/form-
 // Export ecommerce atoms
 export { default as ZenbyteProductImageThumbnail } from "./atoms/product-image-thumbnail/ProductImageThumbnail";
 
+// Export chat atoms
+export { default as ZenbyteChatMessage } from "./atoms/chat-message/ChatMessage";
+export { default as ZenbyteTypingIndicator } from "./atoms/typing-indicator/TypingIndicator";
+export { default as ZenbyteChatTextInput } from "./atoms/chat-text-input/ChatTextInput";
+export { default as ZenbyteChatButton } from "./atoms/chat-button/ChatButton";
+export type { ChatMessageProps } from "./atoms/chat-message/ChatMessage";
+
 // Molecules
 export { default as ZenbyteCartItem } from "./molecules/cart-item/CartItem";
 export { default as ZenbyteDropdownList } from "./molecules/dropdown-list/DropdownList";
@@ -42,6 +49,10 @@ export { default as ZenbyteMultiSelectDropdown } from "./molecules/multi-select-
 export { default as ZenbyteProductCard } from "./molecules/product-card/ProductCard";
 export { default as ZenbyteQuantitySelector } from "./molecules/quantity-selector/QuantitySelector";
 export { default as ZenbyteSubTotalCard } from "./molecules/sub-total-card/SubTotalCard";
+
+// Export chat molecules
+export { default as ZenbyteChatMessageList } from "./molecules/chat-message-list/ChatMessageList";
+export { default as ZenbyteChatInput } from "./molecules/chat-input/ChatInput";
 
 // Organisms
 export { default as ZenbyteCartList } from "./organisms/cart-list/CartList";
@@ -53,6 +64,10 @@ export { default as ZenbyteProductDetail } from "./organisms/product-detail/Prod
 export { default as ZenbyteProductOverview } from "./organisms/product-overview/ProductOverview";
 export { default as ZenbyteTable } from "./organisms/table/Table";
 export { default as ZenbyteTopNav } from "./organisms/topnav/TopNav";
+
+// Export chat organisms
+export { default as ZenbyteChatContainer } from "./organisms/chat-container/ChatContainer";
+export { default as ZenbyteChatWidget } from "./organisms/chat-widget/ChatWidget";
 
 // Pages
 export { default as ZenbyteLoginPage } from "./pages/login-page/LoginPage";

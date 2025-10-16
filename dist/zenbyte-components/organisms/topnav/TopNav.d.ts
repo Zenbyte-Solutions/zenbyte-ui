@@ -2,6 +2,7 @@ import React from "react";
 interface Page {
     label: string;
     href: string;
+    onClick?: () => void;
 }
 interface TopNavProps {
     logo?: React.ReactNode;

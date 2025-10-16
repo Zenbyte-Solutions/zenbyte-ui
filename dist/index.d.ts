@@ -7,6 +7,7 @@ export { default as ZenbyteDatePicker } from "./zenbyte-components/atoms/date-pi
 export { default as ZenbyteFileUpload } from "./zenbyte-components/atoms/file-upload/FileUpload";
 export { default as ZenbyteInput } from "./zenbyte-components/atoms/input/Input";
 export { default as ZenbyteNumberInput } from "./zenbyte-components/atoms/numberinput/NumberInput";
+export { default as ZenbytePageTitle } from "./zenbyte-components/atoms/page-title/PageTitle";
 export { default as ZenbyteStepper } from "./zenbyte-components/atoms/stepper/Stepper";
 export { default as ZenbyteMenuItem } from "./zenbyte-components/atoms/menu-item/MenuItem";
 export { default as ZenbytePagination } from "./zenbyte-components/atoms/pagination/Pagination";
@@ -23,6 +24,10 @@ export { default as ZenbyteFormInput } from "./zenbyte-components/atoms/form-com
 export { default as ZenbyteFormMultiSelectDropdown } from "./zenbyte-components/atoms/form-components/form-multi-select-dropdown/FormMultiSelectDropdown";
 export { default as ZenbyteFormRadioButton } from "./zenbyte-components/atoms/form-components/form-radiobutton/FormRadioButton";
 export { default as ZenbyteFormTextArea } from "./zenbyte-components/atoms/form-components/form-textarea/FormTextArea";
+export { default as ZenbyteFormDynamicArray } from "./zenbyte-components/atoms/form-components/form-dynamic-array/FormDynamicArray";
+export { default as ZenbyteFormNumberInput } from "./zenbyte-components/atoms/form-components/form-numberinput/FormNumberInput";
+export { default as ZenbyteFormSelector } from "./zenbyte-components/atoms/form-components/form-selector/FormSelector";
+export { default as ZenbyteFormImageUpload } from "./zenbyte-components/atoms/form-components/form-imageupload/FormImageUpload";
 export { default as ZenbyteProductImageThumbnail } from "./zenbyte-components/atoms/product-image-thumbnail/ProductImageThumbnail";
 export { default as ZenbyteCartItem } from "./zenbyte-components/molecules/cart-item/CartItem";
 export { default as ZenbyteDropdownList } from "./zenbyte-components/molecules/dropdown-list/DropdownList";
